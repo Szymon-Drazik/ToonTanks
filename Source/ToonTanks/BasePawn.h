@@ -36,6 +36,8 @@ public:
 	UPROPERTY(EditAnywhere, category = "Death")
 	class UParticleSystem* DeathParticle;
 
+	UPROPERTY(EditAnywhere , category="Sound") 
+	 class USoundBase* DeathSound;
 	
 	private:
 	

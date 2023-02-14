@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "Projectile.generated.h"
 
+class USoundBase;
+
 UCLASS()
 class TOONTANKS_API AProjectile : public AActor
 {
@@ -41,6 +43,13 @@ private:
 
 	UPROPERTY(VisibleAnywhere ,category = "Particle")
 	class UParticleSystemComponent* ParticleComponent;
+
+	UPROPERTY(EditAnywhere , category="Sound") 
+	USoundBase* HitSound;
+
+	UPROPERTY(EditAnywhere , category="Sound") 
+	USoundBase* ShootSound;
+
 	public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
