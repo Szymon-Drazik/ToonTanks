@@ -32,6 +32,10 @@ public:
 	
 	UPROPERTY(VisibleAnywhere , BlueprintReadOnly , category ="Czołg" , meta = (AllowPrivateAccess = "true"))
 	USceneComponent* RocketSpawner;
+
+	UPROPERTY(EditAnywhere, category = "Death")
+	class UParticleSystem* DeathParticle;
+
 	
 	private:
 	
