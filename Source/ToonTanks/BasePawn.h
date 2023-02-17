@@ -37,7 +37,7 @@ public:
 	class UParticleSystem* DeathParticle;
 
 	UPROPERTY(EditAnywhere , category="Sound") 
-	 class USoundBase* DeathSound;
+	class USoundBase* DeathSound;
 	
 	private:
 	

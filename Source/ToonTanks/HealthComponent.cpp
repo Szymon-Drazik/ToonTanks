@@ -47,4 +47,8 @@ if(Health<= 0.f && ToonTanksGameMode)
 {
 ToonTanksGameMode->ActorDied(DamageActor);
 }
+if(HitSound)
+{
+	UGameplayStatics::PlaySoundAtLocation(this , HitSound,DamageActor->GetActorLocation());
+}
 }

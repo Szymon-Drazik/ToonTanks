@@ -18,7 +18,12 @@ void ATower::Tick(float DeltaTime)
 void ATower::HandleDestruction()
 {
 Super::HandleDestruction();
+if(DeathSound)
+{
+	UGameplayStatics::PlaySoundAtLocation(this , DeathSound,GetActorLocation());
+}
 Destroy();
+
 }
 void ATower::BeginPlay()
 {
