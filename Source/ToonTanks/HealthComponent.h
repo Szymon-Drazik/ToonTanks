@@ -22,10 +22,7 @@ protected:
 
 	private:
 	UPROPERTY(EditDefaultsOnly)
-	float MaxHealth;
-
-	UPROPERTY(EditAnywhere , category="Sound") 
-	class USoundBase* HitSound;
+	float MaxHealth = 300;
 	
 	UPROPERTY(BlueprintReadOnly , meta =(AllowPrivateAccess = "true"))
 	float Health = 0;
