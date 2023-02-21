@@ -51,11 +51,14 @@ void AProjectile::OnHit(UPrimitiveComponent *HitComp, AActor *OtherActor, UPrimi
 		{
 			UGameplayStatics::SpawnEmitterAtLocation(this , HitParticle , GetActorLocation(),GetActorRotation());
 		}
-	}
-	if(HitSound)
-	{
-		UGameplayStatics::PlaySoundAtLocation(this , HitSound,GetActorLocation());
-	}
-	Destroy();
-	
+		if(HitSound)
+		{
+			UGameplayStatics::PlaySoundAtLocation(this , HitSound,GetActorLocation());
+		}
+		if(HitCameraShakeClass)
+		{
+		GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(HitCameraShakeClass);
+		}
+	}	
+Destroy();	
 }

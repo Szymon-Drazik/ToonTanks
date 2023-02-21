@@ -82,11 +82,11 @@ FRotator Rotation = RocketSpawner->GetComponentRotation();
 auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, Location, Rotation);
 Projectile->SetOwner(this);
 }
-else if(Shoots == 1)
+Shoots++;
+if(Shoots == 1)
 {
     GetWorldTimerManager().SetTimer(Delay,[&](){Shoots = 0;},1.5,false);
 }
-Shoots++;
 }
 void ATank::Press()
 {
@@ -105,10 +105,10 @@ void ATank::Ammo()
     auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass2, RifleLocation, RifleRotation);
     Projectile->SetOwner(this);
     }
-    else if(AmmoShoots == 35)
+    AmmoShoots++;
+    if(AmmoShoots == 35)
     {
         GetWorldTimerManager().SetTimer(AmmoDelay,[&](){AmmoShoots = 0;},4,false);
     }
-    AmmoShoots++;
 }
 
