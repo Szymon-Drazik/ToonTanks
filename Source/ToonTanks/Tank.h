@@ -20,6 +20,8 @@ class TOONTANKS_API ATank : public ABasePawn
 	public:
 	ATank();
 
+	bool bAlive = true ;
+
 	FTimerHandle FireRateTimerHandle;
 	
 	APlayerController* GetTankPlayerController() const{return TankPlayerController;}	

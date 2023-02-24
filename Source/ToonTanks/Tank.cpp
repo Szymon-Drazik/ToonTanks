@@ -28,6 +28,7 @@ void ATank::HandleDestruction()
     GetWorldTimerManager().ClearTimer(FireRateTimerHandle);
     SetActorHiddenInGame(true);
     SetActorTickEnabled(false);
+    bAlive = false ;
 }
 ATank::ATank()
 {
@@ -79,7 +80,7 @@ if(Shoots<1)
 {
 FVector Location = RocketSpawner->GetComponentLocation();
 FRotator Rotation = RocketSpawner->GetComponentRotation();
-auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, Location, Rotation);
+AProjectile*  Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, Location, Rotation);
 Projectile->SetOwner(this);
 }
 Shoots++;
@@ -102,7 +103,7 @@ void ATank::Ammo()
     {
     FVector RifleLocation = RifleBullet->GetComponentLocation();
     FRotator RifleRotation = RifleBullet->GetComponentRotation();
-    auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass2, RifleLocation, RifleRotation);
+    AProjectile* Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass2, RifleLocation, RifleRotation);
     Projectile->SetOwner(this);
     }
     AmmoShoots++;

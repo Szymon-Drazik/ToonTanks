@@ -35,9 +35,12 @@ GetWorldTimerManager().SetTimer(FireRateTimerHandle,this,&ATower::CheckFireCondi
 }
 void ATower::CheckFireCondition()
 {
-	if(IfInRange())
+	if(Tank->bAlive)
 	{
-		FireTower();
+		if(IfInRange())
+		{
+			FireTower();
+		}
 	}
 	
 }
